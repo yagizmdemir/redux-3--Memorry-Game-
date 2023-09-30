@@ -1,0 +1,148 @@
+body {
+  background: #fff;
+  font-family: "Delius", cursive;
+}
+
+#app {
+  padding: 35px;
+  width: 40%;
+  margin: 20px auto;
+  border-radius: 10px;
+}
+#app .playground {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  margin-bottom: -15px;
+}
+#app .playground > div {
+  width: 15%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 110px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 15px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+}
+#app .playground .card {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  height: 110px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  margin-bottom: 15px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  position: relative;
+}
+#app .playground .card div {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  background: #f4f5f7;
+}
+#app .playground .card .front {
+  font-size: 50px;
+  line-height: 120px;
+  cursor: pointer;
+  color: #b9bfcc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#app .playground .card .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  line-height: 110px;
+}
+#app .playground .card .back img {
+  vertical-align: middle;
+  width: 70%;
+}
+#app .playground .card.opened {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+#app .playground .card.matched {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+#app .playground .card.matched .back {
+  -webkit-box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05) inset;
+          box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.05) inset;
+  -webkit-animation: selected 0.8s 0s ease 1;
+          animation: selected 0.8s 0s ease 1;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  opacity: 0.2;
+}
+
+@-webkit-keyframes selected {
+  0% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes selected {
+  0% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
